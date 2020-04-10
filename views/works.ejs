@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artwork Displayed</title>
+    <title>Works of Art</title>
 </head>
 <body>
-    <h2> Everything in our Catalog:</h2>
+    <h2> Everything in my Catalog:</h2>
     <ul>
         <% for (let i = 0; i < data.length; i++) { %>
             <li>
-                <%= data[i].title %> : <%= data[i].link %>
+                <%= data[i].title %>: <%= data[i].link %>
                 <button class="delete" id="<%= data[i]._id %>">Delete</button>
             </li>
         <% } %>
