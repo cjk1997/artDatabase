@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork Displayed</title>
+</head>
+<body>
+    <h2> Everything in our Catalog:</h2>
+    <ul>
+        <% for (let i = 0; i < data.length; i++) { %>
+            <li>
+                <%= data[i].title %> : <%= data[i].link %>
+                <button class="delete" id="<%= data[i]._id %>">Delete</button>
+            </li>
+        <% } %>
+    </ul>
+    <h3>Add to it:</h3>
+    <form>
+        <label id="title">Title:</label>
+        <input type="text" id="Title" name="Title"><br><br>
+        <label id="artist">Artist:</label>
+        <input type="text" id="Artist" name="Artist"><br><br>
+        <label id="medium">Medium:</label>
+        <input type="text" id="Medium" name="Medium"><br><br>
+        <label id="location">Location:</label>
+        <input type="text" id="Location" name="Location"><br><br>
+        <input type="button" id="Submit" value="Submit">
+    </form>
+    <script src="../javascripts/works.js"></script>
+</body>
+</html>
