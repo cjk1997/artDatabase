@@ -15,7 +15,7 @@ const submitHandler = () => {
         'medium': medium.value,
         'location': location.value
     }];
-    fetch(`api/articles`, {
+    fetch(`api/works`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -30,7 +30,7 @@ submit.addEventListener('click', submitHandler);
 const deleteHandler = () => {
     console.log('ID: ', event.target.id);
     fetch(`/api/works/${event.target.id}`, {
-        method: 'delete'
+        method: 'DELETE'
     }).then(() => window.location.replace('/works'));
 };
 
