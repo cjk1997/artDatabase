@@ -1,15 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
 const { 
-  getArticles,
-  addArticle,
-  updateArticle,
-  deleteArticle
+  getWorks,
+  addWork,
+  updateWork,
+  deleteWork
 } = require('../data/works');
 
 router.get('/', function(req, res, next) {
@@ -18,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/works', async function(req, res, next) {
   try {
-    const data = await getArticles();
+    const data = await getWorks();
     res.render('works', { title: "Works", data: data });
   } catch (err) {
     console.log(err);
